@@ -13,6 +13,10 @@
     border-bottom: 1px solid white;
 }
 
+.hidden {
+    display: none;
+}
+
 .buttons-container {
     display: flex;
     gap: 0.5rem;
