@@ -19,6 +19,12 @@ const ProductList = ({
                             checked={selectedProducts.includes(product.id)}
                             onChange={() => toggleProductSelection(product.id)}
                         />
+                        <input
+                            type="checkbox"
+                            className=".delete-checkbox"
+                            checked={selectedProducts.includes(product.id)}
+                            onChange={() => toggleProductSelection(product.id)}
+                        />
                         <h2>{product.sku}</h2>
                         <p2>{product.name}</p2>
                         <p2>${product.price}</p2>
