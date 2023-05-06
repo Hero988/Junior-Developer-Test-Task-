@@ -10,6 +10,8 @@ const productsData = [
     { id: 2, sku: "JVC201123", name: "Acme", price: 1, attribute: "700 MB" },
 ];
 
+
+
 function App() {
     const [products, setProducts] = useState(productsData);
     const [selectedProducts, setSelectedProducts] = useState([]);
