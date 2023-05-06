@@ -22,10 +22,6 @@ function App() {
         );
         setProducts(newProducts);
         setSelectedProducts([]);
-
-        const checkboxesContainer = document.querySelector('.products-container');
-        const checkboxes = checkboxesContainer.querySelectorAll('.delete-checkbox');
-        checkboxes.forEach((checkbox) => checkbox.parentNode.removeChild(checkbox));
     };
 
     const toggleProductSelection = (id) => {
