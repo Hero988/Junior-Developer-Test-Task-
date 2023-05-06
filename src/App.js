@@ -78,6 +78,7 @@ function App() {
                                             className="delete-checkbox"
                                             checked={selectedProducts.includes(product.id)}
                                             onChange={() => toggleProductSelection(product.id)}
+                                            style={{ display: products.length === 0 ? "none" : "inline" }}
                                         />
                                         <h2>{product.sku}</h2>
                                         <p2>{product.name}</p2>
