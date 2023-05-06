@@ -12,7 +12,6 @@ const AddProduct = ({ addProduct, products }) => {
     const [height, setHeight] = useState("");
     const [width, setWidth] = useState("");
     const [length, setLength] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
 
     const navigate = useNavigate();
 

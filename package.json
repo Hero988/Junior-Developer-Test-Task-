@@ -1,7 +1,6 @@
 {
   "name": "junior_developer_test_task",
   "version": "0.1.0",
-  "homepage": "https://github.com/Hero988/Junior-Developer-Test-Task-",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.1.3",

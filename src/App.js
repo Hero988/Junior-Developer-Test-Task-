@@ -6,8 +6,8 @@ import AddProduct from "./AddProduct";
 import { useNavigate } from "react-router-dom";
 
 const productsData = [
-    { id: 1, sku: "JVC200123", name: "Ame Disc", price: 1, attribute: "700 MB" },
-    { id: 2, sku: "JVC201123", name: "Acme Disc", price: 2, attribute: "1000 MB" },
+    { id: 1, sku: "JVC200123", name: "Acme", price: 1, attribute: "700 MB" },
+    { id: 2, sku: "JVC201123", name: "Acme", price: 1, attribute: "700 MB" },
 ];
 
 function App() {
