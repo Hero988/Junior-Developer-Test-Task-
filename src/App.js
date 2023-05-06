@@ -23,13 +23,9 @@ function App() {
         setProducts(newProducts);
         setSelectedProducts([]);
 
-        const checkboxes = document.querySelectorAll('.delete-checkbox');
-        checkboxes.forEach((checkbox) => {
-            if (checkbox.checked) {
-                checkbox.classList.remove('delete-checkbox');
-                checkbox.checked = false;
-            }
-        });
+        const checkboxesContainer = document.querySelector('.products-container');
+        const checkboxes = checkboxesContainer.querySelectorAll('.delete-checkbox');
+        checkboxes.forEach((checkbox) => checkbox.parentNode.removeChild(checkbox));
     };
 
     const toggleProductSelection = (id) => {
