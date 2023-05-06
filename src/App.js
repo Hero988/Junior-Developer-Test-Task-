@@ -75,10 +75,9 @@ function App() {
                                     <div key={product.id} className="product-box">
                                         <input
                                             type="checkbox"
-                                            className=".delete-checkbox delete-checkbox"
+                                            className="delete-checkbox"
                                             checked={selectedProducts.includes(product.id)}
                                             onChange={() => toggleProductSelection(product.id)}
-                                            style={{ display: products.length === 0 ? "none" : "inline" }}
                                         />
                                         <h2>{product.sku}</h2>
                                         <p2>{product.name}</p2>
@@ -87,7 +86,7 @@ function App() {
                                     </div>
                                 ))
                             ) : (
-                               <p className="work :)"></p>
+                                <p className="work :)"></p>
                             )}
                         </div>
                     }
