@@ -7,9 +7,7 @@ import { useNavigate } from "react-router-dom";
 import ProductList from "./ProductList"
 
 const productsData = [
-    { id: 1, sku: "SKU1", name: "NameTest001", price: 10, attribute: "500 MB" },
-    { id: 2, sku: "SKU2", name: "NameTest000", price: 15, attribute: "1.5 Kg" },
-    { id: 3, sku: "SKU3", name: "NameTest002", price: 100, attribute: "50x50x50" },
+
 ];
 
 function App() {
