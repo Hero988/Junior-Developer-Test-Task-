@@ -12,8 +12,6 @@ const productsData = [
     { id: 3, sku: "SKU3", name: "NameTest002", price: 100, attribute: "50x50x50" },
 ];
 
-
-
 function App() {
     const [products, setProducts] = useState(productsData);
     const [selectedProducts, setSelectedProducts] = useState([]);
@@ -48,7 +46,6 @@ function App() {
 
     const location = useLocation();
     const isAddProductPage = location.pathname === "/add-product";
-
 
     return (
         <div className="App">
