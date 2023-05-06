@@ -75,7 +75,7 @@ function App() {
                                     <div key={product.id} className="product-box">
                                         <input
                                             type="checkbox"
-                                            className=".delete-checkbox"
+                                            className=".delete-checkbox, delete-checkbox"
                                             checked={selectedProducts.includes(product.id)}
                                             onChange={() => toggleProductSelection(product.id)}
                                             style={{ display: products.length === 0 ? "none" : "inline" }}
