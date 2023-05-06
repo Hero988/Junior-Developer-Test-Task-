@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import "./App.css";
 import AddProduct from "./AddProduct";
 import { useNavigate } from "react-router-dom";
+import ProductList from "./ProductList"
 
 const productsData = [
     { id: 1, sku: "SKU1", name: "NameTest001", price: 10, attribute: "500 MB" },
@@ -66,32 +67,7 @@ function App() {
             </header>
             <Routes>
                 <Route path="/add-product" element={<AddProduct addProduct={addProduct} products={products} />} />
-                <Route
-                    path="/"
-                    element={
-                        <div className="products-container">
-                            {products.length > 0 ? (
-                                products.map((product) => (
-                                    <div key={product.id} className="product-box">
-                                        <input
-                                            type="checkbox"
-                                            className="delete-checkbox"
-                                            checked={selectedProducts.includes(product.id)}
-                                            onChange={() => toggleProductSelection(product.id)}
-                                            style={{ display: products.length === 0 ? "none" : "inline" }}
-                                        />
-                                        <h2>{product.sku}</h2>
-                                        <p2>{product.name}</p2>
-                                        <p2>${product.price}</p2>
-                                        <p2>{product.attribute}</p2>
-                                    </div>
-                                ))
-                            ) : (
-                               <p className="work :)"></p>
-                            )}
-                        </div>
-                    }
-                />
+                <Route path="/" element={<ProductList products={products} selectedProducts={selectedProducts} toggleProductSelection={toggleProductSelection} />} />
             </Routes>
         </div>
     );
