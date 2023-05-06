@@ -72,6 +72,7 @@ function App() {
                             <input
                                 type="checkbox"
                                 className=".delete-checkbox"
+                                className="delete-checkbox"
                                 checked={selectedProducts.includes(product.id)}
                                 onChange={() => toggleProductSelection(product.id)}
                             />
