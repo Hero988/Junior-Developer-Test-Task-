@@ -22,6 +22,14 @@ function App() {
         );
         setProducts(newProducts);
         setSelectedProducts([]);
+
+        const checkboxes = document.querySelectorAll('.delete-checkbox');
+        checkboxes.forEach((checkbox) => {
+            if (checkbox.checked) {
+                checkbox.classList.remove('delete-checkbox');
+                checkbox.checked = false;
+            }
+        });
     };
 
     const toggleProductSelection = (id) => {
