@@ -1,0 +1,35 @@
+.App {
+    text-align: center;
+}
+
+.App-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282c34;
+    min-height: 10vh;
+    padding: 1rem;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.product-box {
+    width: calc(100% - 0.5rem);
+    border: 1px solid #ccc;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

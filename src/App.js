@@ -1,0 +1,87 @@
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import "./App.css";
+import AddProduct from "./AddProduct";
+import { useNavigate } from "react-router-dom";
+
+const productsData = [
+    { id: 1, sku: "JVC200123", name: "Ame Disc", price: 1, attribute: "700 MB" },
+    { id: 2, sku: "JVC201123", name: "Acme Disc", price: 2, attribute: "1000 MB" },
+];
+
+function App() {
+    const [products, setProducts] = useState(productsData);
+    const [selectedProducts, setSelectedProducts] = useState([]);
+
+    const handleMassDelete = () => {
+        const newProducts = products.filter(
+            (product) => !selectedProducts.includes(product.id)
+        );
+        setProducts(newProducts);
+        setSelectedProducts([]);
+    };
+
+    const toggleProductSelection = (id) => {
+        setSelectedProducts((prevSelected) =>
+            prevSelected.includes(id)
+                ? prevSelected.filter((productId) => productId !== id)
+                : [...prevSelected, id]
+        );
+    };
+
+    const addProduct = (newProduct) => {
+        const newProductId = products.length > 0 ? products[products.length - 1].id + 1 : 1;
+        const product = { ...newProduct, id: newProductId };
+        setProducts([...products, product]);
+    };
+
+    const navigate = useNavigate();
+
+    const handleAddProduct = () => {
+        navigate("/add-product");
+    };
+
+    const location = useLocation();
+    const isAddProductPage = location.pathname === "/add-product";
+
+
+    return (
+        <div className="App">
+            <header className={isAddProductPage ? '' : 'App-header'}>
+                {!isAddProductPage && (
+                    <>
+                        <h1>Products List</h1>
+                        <div className="buttons-container">
+                            <button onClick={handleAddProduct}>ADD</button>
+                            <button id="#delete-product-btn" onClick={handleMassDelete}>
+                                MASS DELETE
+                            </button>
+                        </div>
+                    </>
+                )}
+            </header>
+            <Routes>
+                <Route path="/add-product" element={<AddProduct addProduct={addProduct} products={products} />} />
+                <Route path="/" element={<div className="products-container">
+                    {products.map((product) => (
+                        <div key={product.id} className="product-box">
+                            <input
+                                type="checkbox"
+                                className="delete-checkbox"
+                                checked={selectedProducts.includes(product.id)}
+                                onChange={() => toggleProductSelection(product.id)}
+                            />
+                            <h2>{product.sku}</h2>
+                            <p2>{product.name}</p2>
+                            <p2>${product.price}</p2>
+                            <p2>{product.attribute}</p2>
+                        </div>
+                    ))}
+                </div>} />
+            </Routes>
+        </div>
+    );
+}
+
+export default App;
