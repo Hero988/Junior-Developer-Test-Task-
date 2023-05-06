@@ -75,7 +75,7 @@ function App() {
                                     <div key={product.id} className="product-box">
                                         <input
                                             type="checkbox"
-                                            className="delete-checkbox"
+                                            className={selectedProducts.includes(product.id) ? "delete-checkbox" : ""}
                                             checked={selectedProducts.includes(product.id)}
                                             onChange={() => toggleProductSelection(product.id)}
                                         />
@@ -89,6 +89,7 @@ function App() {
                                 <p className="work :)"></p>
                             )}
                         </div>
+
                     }
                 />
             </Routes>
